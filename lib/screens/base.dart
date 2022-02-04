@@ -58,8 +58,11 @@ class _BaseState extends State<Base> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Icon(Icons.home_outlined),
-                        Text("Home")
+                        Icon(Icons.home_outlined, color: Colors.grey),
+                        Text(
+                            "Home",
+                            style: TextStyle(color: Colors.grey)
+                        )
                       ],
                     ),
                   ),
@@ -79,7 +82,7 @@ class _BaseState extends State<Base> {
                         ),
                         Text(
                           "Accounts",
-                          style: TextStyle(color: Colors.grey),
+                            style: TextStyle(color: Colors.grey)
                         )
                       ],
                     ),
@@ -99,10 +102,10 @@ class _BaseState extends State<Base> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Icon(Icons.timeline_rounded),
+                        Icon(Icons.timeline_rounded, color: Colors.grey,),
                         Text(
                             "Track",
-                            style: TextStyle(color: Colors.grey[600])
+                            style: TextStyle(color: Colors.grey)
                         )
                       ],
                     ),
@@ -117,10 +120,10 @@ class _BaseState extends State<Base> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Icon(Icons.credit_card_rounded),
+                        Icon(Icons.credit_card_rounded, color: Colors.grey,),
                         Text(
                             "Card",
-                            style: TextStyle(color: Colors.grey[600])
+                            style: TextStyle(color: Colors.grey)
                         )
                       ],
                     ),

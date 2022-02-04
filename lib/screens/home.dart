@@ -16,6 +16,7 @@ class Home extends StatelessWidget {
       color: Colors.grey[200],
       child: SafeArea(
         child: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
           child: Column(
             children: <Widget> [
               Center(
@@ -65,47 +66,63 @@ class Home extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(9.0),
                 child: Card(
-                  child: ListView.separated(
-                    scrollDirection: Axis.vertical,
-                    shrinkWrap: true,
-                    padding: const EdgeInsets.all(8),
-                    itemCount: entries.length,
-                    itemBuilder: (BuildContext context, int index) {
-                      return Container(
-                        height: 50,
-                        child: ListTile(
-                          leading: Image(
-                            width: ICONSIZE,
-                            height: ICONSIZE,
-                            image: AssetImage('assets/${images[index]}'),
-                          ),
-                          title: Row(
-                            children: [
-                              Text(entries[index],
-                                style: TextStyle(
-                                    fontWeight: FontWeight.w500
-                                ),
-                              ),
-                              Text("\$${earnings[index]}",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.w500
-                                ),
-                                textAlign: TextAlign.right,
-                              ),
-                            ],
-                          ),
-                          subtitle: Text("${price[index]}"),
-                          trailing: Text('${percent[index]}%',
+                  child: Column(
+                    children: [
+                      ListTile(
+                        leading: Text(
+                            "Crypto Wallet",
                             style: TextStyle(
-                                color: percent[index] < 0 ? Colors.red : Colors.green,
                                 fontWeight: FontWeight.w500,
-                                fontSize: 16
+                              fontSize: 18
                             ),
-                          ),
                         ),
-                      );
-                    },
-                    separatorBuilder: (BuildContext context, int index) => const Divider(),
+                        trailing: Icon(
+                          Icons.arrow_drop_down,
+                        )
+                      ),
+                      ListView.separated(
+                        scrollDirection: Axis.vertical,
+                        shrinkWrap: true,
+                        padding: const EdgeInsets.all(8),
+                        itemCount: entries.length,
+                        itemBuilder: (BuildContext context, int index) {
+                          return Container(
+                            height: 50,
+                            child: ListTile(
+                              leading: Image(
+                                width: ICONSIZE,
+                                height: ICONSIZE,
+                                image: AssetImage('assets/${images[index]}'),
+                              ),
+                              title: Row(
+                                children: [
+                                  Text(entries[index],
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w500
+                                    ),
+                                  ),
+                                  Text("\$${earnings[index]}",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w500
+                                    ),
+                                    textAlign: TextAlign.right,
+                                  ),
+                                ],
+                              ),
+                              subtitle: Text("${price[index]}"),
+                              trailing: Text('${percent[index]}%',
+                                style: TextStyle(
+                                    color: percent[index] < 0 ? Colors.red : Colors.green,
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 16
+                                ),
+                              ),
+                            ),
+                          );
+                        },
+                        separatorBuilder: (BuildContext context, int index) => const Divider(),
+                      ),
+                    ],
                   ),
                 ),
               )
