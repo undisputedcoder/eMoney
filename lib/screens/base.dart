@@ -27,7 +27,11 @@ class _BaseState extends State<Base> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: Text("Home")),
+        actions: [
+          Icon(Icons.notifications)
+        ],
+        title: Center(child: Text("Home"),
+        ),
       ),
       body: PageStorage(
         bucket: _bucket,
@@ -58,10 +62,10 @@ class _BaseState extends State<Base> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Icon(Icons.home_outlined, color: Colors.grey),
+                        Icon(Icons.home_outlined, color:  _selectedIndex == 0 ? Colors.blue : Colors.grey),
                         Text(
                             "Home",
-                            style: TextStyle(color: Colors.grey)
+                            style: TextStyle(color:  _selectedIndex == 0 ? Colors.blue : Colors.grey)
                         )
                       ],
                     ),
@@ -78,11 +82,11 @@ class _BaseState extends State<Base> {
                       children: <Widget>[
                         Icon(
                           Icons.account_balance_wallet_rounded,
-                          color: Colors.grey,
+                          color:  _selectedIndex == 1 ? Colors.blue : Colors.grey,
                         ),
                         Text(
                           "Accounts",
-                            style: TextStyle(color: Colors.grey)
+                            style: TextStyle(color:  _selectedIndex == 1 ? Colors.blue : Colors.grey)
                         )
                       ],
                     ),
@@ -102,10 +106,10 @@ class _BaseState extends State<Base> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Icon(Icons.timeline_rounded, color: Colors.grey,),
+                        Icon(Icons.timeline_rounded, color:  _selectedIndex == 2 ? Colors.blue : Colors.grey),
                         Text(
                             "Track",
-                            style: TextStyle(color: Colors.grey)
+                            style: TextStyle(color:  _selectedIndex == 2 ? Colors.blue : Colors.grey)
                         )
                       ],
                     ),
@@ -120,10 +124,10 @@ class _BaseState extends State<Base> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Icon(Icons.credit_card_rounded, color: Colors.grey,),
+                        Icon(Icons.credit_card_rounded, color: _selectedIndex == 3 ? Colors.blue : Colors.grey),
                         Text(
                             "Card",
-                            style: TextStyle(color: Colors.grey)
+                            style: TextStyle(color:  _selectedIndex == 3 ? Colors.blue : Colors.grey)
                         )
                       ],
                     ),
