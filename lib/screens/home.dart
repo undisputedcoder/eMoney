@@ -13,7 +13,7 @@ class Home extends StatelessWidget {
   final List<num> topGainersPercent = [12.71, 9.53];
   final List<String> topGainersimages = ['kyber.png', 'theta.png'];
 
-  static const double ICONSIZE = 35.0;
+  static const double ICONSIZE = 30.0;
 
   @override
   Widget build(BuildContext context) {
@@ -73,7 +73,7 @@ class Home extends StatelessWidget {
                   children: [
                     Text("Favourites".toUpperCase()),
                     Spacer(),
-                    Text("See All"),
+                    Text("See All", style: TextStyle(color: Colors.blueAccent)),
                   ],
                 ),
               ),
@@ -87,7 +87,7 @@ class Home extends StatelessWidget {
                     itemCount: entries.length,
                     itemBuilder: (BuildContext context, int index) {
                       return Container(
-                        height: 65,
+                        height: 60,
                         child: ListTile(
                           leading: Image(
                             width: ICONSIZE,
