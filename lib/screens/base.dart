@@ -27,8 +27,12 @@ class _BaseState extends State<Base> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: Icon(Icons.settings),
         actions: [
-          Icon(Icons.notifications)
+          Padding(
+            padding: const EdgeInsets.only(right: 8.0),
+            child: Icon(Icons.notifications),
+          )
         ],
         title: Center(child: Text("Home"),
         ),
