@@ -1,3 +1,4 @@
+import 'package:app/widgets/balance.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -26,36 +27,8 @@ class Home extends StatelessWidget {
             children: <Widget> [
               Column(
                   children: <Widget>[
-                    Padding(
-                      padding: const EdgeInsets.all(11.0),
-                      child: Text("Total Balance".toUpperCase(),
-                        style: TextStyle(
-                            fontSize: 16.0
-                        ),
-                      ),
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text("\$ ",
-                          style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.w500
-                          ),
-                        ),
-                        Text("21,236.44",
-                          style: TextStyle(
-                              fontSize: 30,
-                              fontWeight: FontWeight.w500
-                          ),
-                        ),
-                        Text(" AUD",
-                          style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.w500
-                          ),
-                        ),
-                      ],
+                    Balance(
+                      balance: "21,236.44",
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
